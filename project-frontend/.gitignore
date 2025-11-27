@@ -21,24 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-node_modules/ 
-.gradle/ 
-build/ 
-/bin/ 
-.DS_Store 
-node_modules/ 
-.gradle/ 
-build/ 
-/bin/ 
-.DS_Store 
-node_modules/  echo .gradle/  echo build/  echo /bin/  echo .DS_Store 
-node_modules/ 
-.gradle/ 
-build/ 
-/bin/ 
-.DS_Store 
-node_modules/ 
-.gradle/ 
-build/ 
-/bin/ 
-.DS_Store 
+
+# Project build/runtime files
+/node_modules
+.gradle/
+build/
+/bin/
+.DS_Store
