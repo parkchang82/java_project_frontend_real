@@ -1,0 +1,74 @@
+/* ✅ 전체 헤더를 3열 고정 구조로: 좌(메뉴) - 중앙(검색) - 우(로그아웃) */
+.header-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 60px;
+}
+
+/* ✅ 왼쪽: 로고 + 메뉴 */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.header-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ✅ 중앙: 검색창 정확히 가운데 고정 */
+.header-center {
+  width: 100%;
+  max-width: 500px;
+  justify-self: center; /* ✅ 이게 핵심 */
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ✅ 오른쪽: 공백 or 로그아웃 버튼 */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ✅ 로그아웃 버튼 */
+.logout-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #555;
+}

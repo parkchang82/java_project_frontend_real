@@ -1,0 +1,172 @@
+/* ===== 전체 컨테이너 ===== */
+.profile-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  color: #222;
+  background-color: #f5f5f5;
+}
+
+/* ===== 프로필 카드 ===== */
+.profile-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ===== 프로필 정보 ===== */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.info-text p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== 액션 버튼 ===== */
+.profile-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease, transform 0.1s ease;
+}
+
+.action-button:hover {
+  background-color: #555;
+  transform: translateY(-1px);
+}
+
+.action-button:active {
+  transform: translateY(1px);
+}
+
+/* 삭제 버튼 */
+.action-button.delete {
+  background-color: #666;
+}
+
+.action-button.delete:hover {
+  background-color: #444;
+}
+
+/* 기존 ProfilePage.css 파일 맨 아래에 추가하세요. */
+
+.profile-image-wrapper {
+  position: relative; /* 자식 요소의 위치 기준점이 됩니다. */
+  width: 150px; /* 이미지 크기와 동일하게 설정 */
+  height: 150px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* 이미지가 찌그러지지 않게 함 */
+}
+
+.image-upload-button {
+  position: absolute; /* 부모 요소를 기준으로 위치를 잡습니다. */
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0; /* 평소에는 숨겨 둡니다. */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.profile-image-wrapper:hover .image-upload-button {
+  opacity: 1; /* 마우스를 올리면 나타납니다. */
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions .action-button.cancel {
+  background-color: #6c757d;
+  color: white;
+}

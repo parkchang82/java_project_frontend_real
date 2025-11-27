@@ -1,0 +1,42 @@
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000; /* 다른 요소들 위에 보이도록 */
+}
+
+.fab-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #0d6efd; /* 부트스트랩 blue 색상 (원하는 색으로 변경) */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px; /* 아이콘 크기 */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.fab-icon:hover {
+  transform: scale(1.1); /* 마우스 올리면 살짝 커짐 */
+}
+
+/* 안 읽은 메시지 배지 */
+.fab-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

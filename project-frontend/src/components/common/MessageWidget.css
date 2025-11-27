@@ -1,0 +1,169 @@
+/* 위젯 전체 컨테이너 */
+.message-widget {
+  position: fixed;
+  bottom: 100px; /* 아이콘 바로 위 */
+  right: 30px;
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 모서리 둥글게 처리 */
+}
+
+/* 헤더 (제목, 닫기 버튼) */
+.widget-header {
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.widget-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+/* 컨텐츠 영역 (이 안에 목록/대화창이 들어옴) */
+.widget-body {
+  flex-grow: 1;
+  overflow-y: auto; /* 내용 길어지면 스크롤 */
+  padding: 10px;
+}
+
+/* 공통 버튼 */
+.widget-button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* 대화 목록 (list) */
+.conversation-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conversation-item {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.conversation-item:hover {
+  background-color: #f8f9fa;
+}
+
+.conversation-item strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+.conversation-item p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 마지막 메시지 길면 ... 처리 */
+}
+
+/* 새 쪽지 (new) */
+.new-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-message-form input,
+.new-message-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* padding 포함해서 width 100% */
+}
+
+.new-message-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* 대화창 (chat) */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word; /* 긴 단어 줄바꿈 */
+}
+
+.message-bubble.sent {
+  background-color: #0d6efd; /* 보낸 메시지 (나) */
+  color: white;
+  align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.message-bubble.received {
+  background-color: #e9ecef; /* 받은 메시지 (상대방) */
+  color: #333;
+  align-self: flex-start; /* 왼쪽 정렬 */
+}
+
+.chat-input-form {
+  display: flex;
+  border-top: 1px solid #e9ecef;
+  padding: 10px;
+}
+
+.chat-input-form input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin-right: 10px;
+}
+
+.chat-input-form button {
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
