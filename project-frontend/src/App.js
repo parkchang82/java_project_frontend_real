@@ -51,7 +51,7 @@ function MainLayout({ children }) {
 
     // 2. 안 읽은 메시지 개수 가져오는 함수
     const fetchUnread = () => {
-      axios.get(`/api/messages/unread-count`) // [GET] /api/messages/unread-count
+      api.get(`/api/messages/unread-count`) // [GET] /api/messages/unread-count
         .then(res => {
           setUnreadCount(res.data.count); // { "count": 5 } 형태
         })
