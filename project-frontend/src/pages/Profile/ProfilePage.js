@@ -11,7 +11,7 @@ function ProfilePage() {
   const [error, setError] = useState(null); 
 
   // 기본 이미지 설정
-  const DEFAULT_IMAGE = '/assets/images/default_profile.png';
+  const DEFAULT_IMAGE = '/logo192.png';
   const [profileImage, setProfileImage] = useState(DEFAULT_IMAGE);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
