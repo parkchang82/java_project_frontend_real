@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; // [추가] useState, useEffect 임포트
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import axios from 'axios'; // [추가] axios 임포트
+import api from './api/api';
 
 // [추가] 3-2, 3-3에서 만든 컴포넌트들 임포트
 import FloatingMessageIcon from './components/common/FloatingMessageIcon';
