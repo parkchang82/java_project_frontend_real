@@ -20,7 +20,7 @@ function ProfilePage() {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   // 💡 백엔드 서버 주소 (이미지 불러올 때 필요)
-  const BASE_URL = "http://localhost:8080";
+  const BASE_URL = "https://java-project-backend-real.onrender.com";
 
   useEffect(() => {
     const fetchProfile = async () => {
