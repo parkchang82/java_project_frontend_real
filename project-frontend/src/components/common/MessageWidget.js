@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import api from '../../api/api';
 import './MessageWidget.css'; // 또는 './components/common/MessageWidget.css'
 import { IoMdArrowBack, IoMdSend } from 'react-icons/io';
 
@@ -26,7 +27,7 @@ const MessageWidget = ({ onClose }) => {
 
   // 1. (list) 내 대화 목록 불러오기
   const fetchConversations = () => {
-    axios.get(`${API_URL}/conversations`)
+    api.get(`${API_URL}/conversations`)
       .then(res => {
         setConversations(res.data);
       })
@@ -36,7 +37,7 @@ const MessageWidget = ({ onClose }) => {
   // 2. (chat) 특정 사용자와의 대화 내역 불러오기
   // [수정] partner 객체에 email 포함
   const fetchMessages = (partner) => { // partner는 {id, name, email}
-    axios.get(`${API_URL}/conversation/${partner.id}`)
+    api.get(`${API_URL}/conversation/${partner.id}`)
       .then(res => {
         setMessages(res.data);
         setCurrentChatPartner(partner); // 파트너 정보(email 포함) 저장
@@ -57,7 +58,7 @@ const MessageWidget = ({ onClose }) => {
       content: newMessage
     };
 
-    axios.post(API_URL, messageData) 
+    api.post(API_URL, messageData) 
       .then(res => {
         setMessages([...messages, res.data]);
         setNewMessage('');
@@ -78,7 +79,7 @@ const MessageWidget = ({ onClose }) => {
       content: newMessageContent
     };
 
-    axios.post(API_URL, messageData)
+    api.post(API_URL, messageData)
       .then(res => {
         // 전송 성공 시 응답 DTO에서 이메일 정보도 가져옴
         const partner = {
