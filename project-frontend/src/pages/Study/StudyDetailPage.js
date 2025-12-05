@@ -39,6 +39,11 @@ function StudyDetailPage() {
     try {
       const roomId = post.roomId; // 글이 가진 roomId 사용
 
+      if (!roomId) { 
+        alert("스터디 방 ID가 유효하지 않습니다. 잠시 후 다시 시도하거나 관리자에게 문의하세요.");
+        console.error("Room ID is invalid:", post);
+        return; // 유효하지 않으면 여기서 함수 종료
+      }
       const response = await roomsApi.joinRoom(roomId, username);
       const message = response.data;
 
